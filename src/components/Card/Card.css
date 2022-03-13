@@ -1,0 +1,18 @@
+.card-top svg {
+    opacity: 0;
+    transition: 200ms;
+}
+
+.card:hover .card-top svg {
+    opacity: 1;
+}
+
+.card-date svg {
+    width: 16px;
+    height: 16px;
+}
+
+.card-task svg {
+    width: 16px;
+    height: 16px;
+}
