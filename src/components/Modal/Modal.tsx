@@ -1,7 +1,7 @@
 import React from 'react';
 import './Modal.css';
 
-const Modal = (props) => {
+const Modal = (props: any) => {
     return (
         <div className="modal" onClick={() => (props.onClose ? props.onClose() : '')}>
             <div

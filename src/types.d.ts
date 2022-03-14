@@ -1,5 +1,8 @@
-interface Iboard {
+interface IBoard {
     id?: number;
     title: string;
-    cards: any;
+    cards: {
+        id?: number;
+        title: string;
+    }[];
 }

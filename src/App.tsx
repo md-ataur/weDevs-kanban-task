@@ -9,7 +9,7 @@ const boardData = {
 };
 
 function App() {
-    const [boards, setBoards] = useState<Iboard[]>([]);
+    const [boards, setBoards] = useState<IBoard[]>([]);
     const [target, setTarget] = useState({
         cid: '',
         bid: '',
@@ -20,7 +20,6 @@ function App() {
         const card = {
             id: Date.now() + Math.random(),
             title,
-            date: '',
         };
 
         const index = boards.findIndex((item) => item.id === bid);
@@ -34,13 +33,13 @@ function App() {
     };
 
     // Update card
-    const updateCard = (cid: number, bid: number, card: any) => {
+    const updateCard = (cid: number, bid: number, card: IBoard) => {
         const boardIndex = boards.findIndex((item) => item.id === bid);
         if (boardIndex < 0) {
             return;
         }
 
-        const cardIndex = boards[boardIndex].cards.findIndex((item: any) => item.id === cid);
+        const cardIndex = boards[boardIndex].cards.findIndex((item) => item.id === cid);
         if (cardIndex < 0) {
             return;
         }
@@ -57,7 +56,7 @@ function App() {
             return;
         }
 
-        const cardIndex = boards[boardIndex].cards.findIndex((item: any) => item.id === cid);
+        const cardIndex = boards[boardIndex].cards.findIndex((item) => item.id === cid);
         if (cardIndex < 0) {
             return;
         }
@@ -80,7 +79,7 @@ function App() {
     };
 
     // Update board
-    const updateBoard = (bid: number, board: any) => {
+    const updateBoard = (bid: number, board: IBoard) => {
         const boardIndex = boards.findIndex((item) => item.id === bid);
         if (boardIndex < 0) {
             return;
@@ -106,9 +105,7 @@ function App() {
             return;
         }
 
-        source_cardIndex = boards[source_boardIndex].cards?.findIndex(
-            (item: any) => item.id === cid
-        );
+        source_cardIndex = boards[source_boardIndex].cards?.findIndex((item) => item.id === cid);
         if (source_cardIndex < 0) {
             return;
         }

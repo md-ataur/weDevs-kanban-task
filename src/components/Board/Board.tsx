@@ -40,7 +40,7 @@ const Board = (props: any) => {
                     </div>
                 </div>
                 <div className="overflow-y-auto">
-                    {props.board?.cards.map((item: Iboard) => (
+                    {props.board?.cards.map((item: IBoard) => (
                         <Card
                             key={item.id}
                             card={item}
